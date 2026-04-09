@@ -1,0 +1,14 @@
+name: "Test CI/CD"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Echo 
+        run: echo "Hello from CI"
+      - run: python --version || echo "Python not installed"
